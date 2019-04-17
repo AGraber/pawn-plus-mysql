@@ -11,7 +11,7 @@ native Cache:mysql_query_s(MySQL:handle, AmxString:query, bool:use_cache = true)
 native mysql_tquery_s(MySQL:handle, AmxString:query, const callback[] = "", const format[] = "", {MySQL, Float,_}:...) = mysql_tquery;
 native mysql_pquery_s(MySQL:handle, AmxString:query, const callback[] = "", const format[] = "", {MySQL, Float,_}:...) = mysql_pquery;
 
-Task:mysql_aquery(MySQL:handle, const query[], parallel = MYSQL_ASYNC_DEFAULT_PARALLEL)
+stock Task:mysql_aquery(MySQL:handle, const query[], parallel = MYSQL_ASYNC_DEFAULT_PARALLEL)
 {
 	new Task:the_task = task_new();
 	new Handle:task_handle = handle_new(the_task, .weak = true);
@@ -34,7 +34,7 @@ Task:mysql_aquery(MySQL:handle, const query[], parallel = MYSQL_ASYNC_DEFAULT_PA
 	return the_task;
 }
 
-Task:mysql_aquery_s(MySQL:handle, ConstStringTag:query, parallel = MYSQL_ASYNC_DEFAULT_PARALLEL)
+stock Task:mysql_aquery_s(MySQL:handle, ConstStringTag:query, parallel = MYSQL_ASYNC_DEFAULT_PARALLEL)
 {
 	new Task:the_task = task_new();
 	new Handle:task_handle = handle_new(the_task, .weak = true);
