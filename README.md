@@ -58,7 +58,7 @@ Task-based asynchronous queries:
 ```pawn
 LoadPlayerData(playerid)
 {
-	await mysql_aquery_s(DatabaseHandle, @("SELECT * FROM player WHERE id = ) % GetPlayerDBID(playerid), .parallel = false);
+	await mysql_aquery_s(DatabaseHandle, @("SELECT * FROM player WHERE id = ") % GetPlayerDBID(playerid), .parallel = false);
 	// Cache functions will be available after this
 	cache_get_value_name_float(0, "health", PlayerHealth[playerid]);
 	// ...
