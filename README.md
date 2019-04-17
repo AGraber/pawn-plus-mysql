@@ -38,6 +38,11 @@ natives: `mysql_aquery[_s]`, which returns a task that will be
 set as completed when the query completes successfully, or
 fault when there's an error during its execution.
 
+Note that `mysql_aquery[_s]` will piggyback on `mysql_tquery` by default. You
+can override this and use `mysql_tquery` by setting the `parallel` parameter at
+the end to `true`, or explicitly change this default value by defining
+`MYSQL_ASYNC_DEFAULT_PARALLEL` to you desired value.
+
 ## Examples
 
 Using PawnPlus strings on natives
