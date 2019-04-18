@@ -43,7 +43,7 @@ stock Task:mysql_aquery_s(MySQL:handle, ConstStringTag:query, parallel = MYSQL_A
 	callback_name = amx_encode_value_public_name("__ppAsyncMySQLHandler", task_handle);
 	new CallbackHandler:callback_handler = pawn_register_callback("OnQueryError", "__ppAsyncMySQLError", handler_default, "ed", task_handle);
 	
-	new const ret = parallel ? (mysql_pquery_s(handle, query, callback_name, "dd", _:callback_handler, _:task_handle)) : (mysql_tquery_s(handle, query, callback_name, "dd", _:callback_handler, _:task_handle));
+	new const ret = parallel ? (mysql_pquery_s(handle, str_addr(String:query), callback_name, "dd", _:callback_handler, _:task_handle)) : (mysql_tquery_s(handle, str_addr(String:query), callback_name, "dd", _:callback_handler, _:task_handle));
 	
 	if(ret)
 	{
