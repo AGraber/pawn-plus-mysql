@@ -29,7 +29,7 @@ stock Task:mysql_aquery(MySQL:handle, const query[], parallel = MYSQL_ASYNC_DEFA
 	else
 	{
 		pawn_unregister_callback(callback_handler);
-		task_set_error(the_task, amx_err_exit);
+		task_set_error_ms(the_task, amx_err_exit, 0);
 	}
 	return the_task;
 }
@@ -52,7 +52,7 @@ stock Task:mysql_aquery_s(MySQL:handle, ConstStringTag:query, parallel = MYSQL_A
 	else
 	{
 		pawn_unregister_callback(callback_handler);
-		task_set_error(the_task, amx_err_exit);
+		task_set_error_ms(the_task, amx_err_exit, 0);
 	}
 	return the_task;
 }
