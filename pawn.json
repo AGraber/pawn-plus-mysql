@@ -5,6 +5,6 @@
 	"output": "test.amx",
 	"dependencies": [
 		"sampctl/samp-stdlib",
-		"IllidanS4/PawnPlus:v1.0.0-pre4"
+		"IS4Code/PawnPlus:v1.5.3"
 	]
 }
